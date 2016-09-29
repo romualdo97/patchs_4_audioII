@@ -1,0 +1,124 @@
+#N canvas 439 46 1237 753 10;
+#X obj 480 149 osc~;
+#X floatatom 479 108 5 0 0 0 - - -;
+#X obj 485 194 *~;
+#X msg 549 181 0;
+#X msg 586 173 1;
+#X text 448 71 oscilador senoidal;
+#X text 622 67 oscilador diente de cierra;
+#X floatatom 654 113 5 0 0 0 - - -;
+#X obj 662 241 *~;
+#X msg 726 228 0;
+#X msg 763 220 1;
+#X obj 655 154 phasor~;
+#X floatatom 925 101 5 0 0 0 - - -;
+#X obj 929 253 *~;
+#X msg 993 236 0;
+#X msg 1030 236 1;
+#X obj 926 129 phasor~;
+#X text 893 55 oscilador cuadrado;
+#X obj 927 163 expr~ $v1 > 0.5;
+#X obj 508 418 metro 100;
+#X obj 668 293 +~;
+#X obj 666 434 outlet~;
+#X obj 215 212 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 665 344 *~;
+#X obj 298 143 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 112 144 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X floatatom 53 176 5 0 0 0 - - -;
+#X obj 686 -59 select 0 1 2;
+#X obj 507 457 tabwrite~ \$0-wave;
+#X text 138 143 Senoidal;
+#X text 139 158 Triangular;
+#X text 109 123 TIPO ONDA;
+#X text 138 173 CuadradAa;
+#X obj 656 197 expr~ ($v1*2)-1;
+#X obj 931 207 expr~ ($v1*2)-1;
+#X obj 253 144 vsl 15 128 0 50 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 246 113 RATE;
+#X text 291 114 RANGE;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-wave 1000 float 1;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 1000 -1 100 100 1 0 0;
+#X restore 110 212 graph;
+#X obj 707 353 inlet;
+#X obj 662 388 +~;
+#X text 749 356 Inlet para modificar la frecuencia central;
+#X obj 299 9 loadbang;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 20 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 1;
+#X connect 7 0 11 0;
+#X connect 8 0 20 0;
+#X connect 9 0 8 1;
+#X connect 10 0 8 1;
+#X connect 11 0 33 0;
+#X connect 12 0 16 0;
+#X connect 13 0 20 0;
+#X connect 14 0 13 1;
+#X connect 15 0 13 1;
+#X connect 16 0 18 0;
+#X connect 18 0 34 0;
+#X connect 19 0 28 0;
+#X connect 20 0 23 0;
+#X connect 20 0 28 0;
+#X connect 22 0 19 0;
+#X connect 23 0 40 0;
+#X connect 24 0 23 1;
+#X connect 25 0 26 0;
+#X connect 25 0 27 0;
+#X connect 27 0 4 0;
+#X connect 27 0 9 0;
+#X connect 27 0 14 0;
+#X connect 27 1 10 0;
+#X connect 27 1 3 0;
+#X connect 27 1 14 0;
+#X connect 27 2 15 0;
+#X connect 27 2 9 0;
+#X connect 27 2 3 0;
+#X connect 33 0 8 0;
+#X connect 34 0 13 0;
+#X connect 35 0 1 0;
+#X connect 35 0 7 0;
+#X connect 35 0 12 0;
+#X connect 39 0 40 1;
+#X connect 40 0 21 0;
+#X connect 42 0 22 0;
+#X connect 42 0 4 0;
+#X coords 0 -1 1 1 250 220 1 100 100;
