@@ -1,0 +1,37 @@
+#N canvas 467 277 737 300 10;
+#X obj 140 160 tabplay~ mySample;
+#X obj 137 119 soundfiler;
+#X msg 137 72 read -resize \$1 mySample;
+#X obj 141 220 dac~;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array mySample 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 304 102 graph;
+#X msg 90 113 bang;
+#X msg 92 90 stop;
+#X msg 19 144 200000;
+#X text -221 146 reproducir desde la muestra 200000;
+#X msg 17 198 200000 44100;
+#X text -350 192 reproducir desde la muestra 200000 y lea 44100 muestras
+mas equivalentes a un segundo en un archivo con frecuencia de muestreo
+de 44100;
+#X obj -155 60 * 44100;
+#X floatatom -155 29 5 0 0 0 - - -;
+#X text -276 7 Modo dinamico de decir cuantos segundos de reproduccion
+quiero;
+#X msg -155 89 44100 \$1;
+#X connect 0 0 3 0;
+#X connect 0 0 3 1;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 9 0 0 0;
+#X connect 11 0 14 0;
+#X connect 12 0 11 0;
+#X connect 14 0 0 0;
