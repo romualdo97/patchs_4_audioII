@@ -7,6 +7,9 @@ Poder cargar un archivo wav en el computador y poderlo disparar, para luego pode
 
 *Reto:* Hacer que triggerSample.pd me permita ver la ondita del audio que cargo
 
+## Semana 13
+Hoy aprenderemos a hacer secuencias en pure data
+
 --- 
 
 ## Entrega 4
