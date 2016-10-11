@@ -1,0 +1,11 @@
+sample1 bang;
+volumen1 0.8;
+
+2000 sample2 bang;
+volumen2 0.8;
+
+300 notes1 40;
+volumen3 .6;
+
+5000 stop bang;
+volumen3 0;
