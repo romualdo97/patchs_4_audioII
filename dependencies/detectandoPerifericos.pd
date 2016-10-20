@@ -1,5 +1,5 @@
 #N canvas -9 -9 1920 976 10;
-#X obj 572 319 print DEVICES;
+#X obj 614 305 print DEVICES;
 #X msg 547 221 print;
 #X obj 548 261 hidin;
 #X obj 478 222 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -11,6 +11,21 @@
 #X obj 874 231 hid;
 #X obj 892 305 print;
 #X obj 810 138 close;
+#X obj 489 306 print;
+#X obj 544 350 route 7 8 9 10;
+#X obj 545 394 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 571 400 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 582 455 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 604 410 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X connect 1 0 2 0;
+#X connect 2 0 10 0;
 #X connect 2 1 0 0;
 #X connect 3 0 2 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 11 2 15 0;
+#X connect 11 3 14 0;
